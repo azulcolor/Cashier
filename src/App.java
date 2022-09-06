@@ -13,7 +13,6 @@ public class App {
                     case 1:
                         if ( cuentaCreada == false) {
                             cajero.crearCuenta();
-                            System.out.println("\nCuenta creada con éxito\n");
                         } else {
                             System.out.println("\nYa tienes una cuenta creada\n");
                         }

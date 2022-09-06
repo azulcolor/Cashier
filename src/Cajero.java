@@ -8,6 +8,7 @@ public class Cajero {
 
     public void crearCuenta() {
         this.cuentaCreada = true;
+        System.out.println("\nCuenta creada con éxito\n");
     }
 
     public void crearCuenta(float dinero) {
