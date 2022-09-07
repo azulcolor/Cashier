@@ -57,7 +57,18 @@ public class App {
                         }
                         break;
 
-                    case 6: // Salir 
+                    case 6: // Transferir 
+                        if ( cuentaCreada == true) {
+                        	Cuenta_tercero cuentaTransferir = new Cuenta_tercero();
+                            System.out.print("Igrese lacuenta a la que quiere transferir: ");
+                            cuentaTransferir.asignarNumCuenta(int numCuenta);
+                            System.out.print("Igrese el monto de la transferencia: ");
+                            cuentaTransferir.transferir(int dinero);
+                        } else {
+                            System.out.print("\nNo tienes una cuenta creada\n");
+                        }
+                        break;
+                    case 7: // Salir 
                         System.out.println("\nGracias por su preferencia");
                         break;
                 }
