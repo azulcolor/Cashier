@@ -1,14 +1,24 @@
-public class App {
 
-    public static void main(String[] args) throws Exception {
+public class Main {
+
+	public static void main(String[] args) throws Exception {
         int opcion;
         int dinero;
         boolean cuentaCreada;
+        boolean inversion = false;
         Cajero cajero = new Cajero();
         
         do {
                 opcion = cajero.funciones();
                 cuentaCreada = cajero.getCuentaCreada();
+                inversion = cajero.inversion;
+
+                if (inversion == true) {
+                    cajero.ingresar(cajero.getGanancias());
+                    System.out.println("\nHas recibido " + cajero.getGanancias() + " de tus inversiones");
+                    System.out.println("Tu cuenta subió a $" + cajero.getSaldo());
+                }
+                
                 switch (opcion) {
                     case 1:
                         if ( cuentaCreada == false) {
@@ -59,11 +69,8 @@ public class App {
 
                     case 6: // Transferir 
                         if ( cuentaCreada == true) {
-                        	Cuenta_tercero cuentaTransferir = new Cuenta_tercero();
-                            System.out.print("Igrese lacuenta a la que quiere transferir: ");
-                            cuentaTransferir.asignarNumCuenta(int numCuenta);
-                            System.out.print("Igrese el monto de la transferencia: ");
-                            cuentaTransferir.transferir(int dinero);
+                            cajero.inversion();
+                        	System.out.print("\nTus ganancias por inversión es de: $" + cajero.getGanancias() + "\n");
                         } else {
                             System.out.print("\nNo tienes una cuenta creada\n");
                         }
@@ -72,8 +79,10 @@ public class App {
                         System.out.println("\nGracias por su preferencia");
                         break;
                 }
-        } while (opcion != 6);
+        } while (opcion != 7);
 
 
     }
 }
+
+
